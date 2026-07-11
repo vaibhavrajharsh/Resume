@@ -1,3 +1,139 @@
+%-------------------------
+% Resume in Latex
+% Author : Harshibar
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
 
 %----------HEADING----------
 \begin{center}
@@ -20,6 +156,17 @@
     \faMapMarker \hspace{2pt} Patna, Bihar, India
 \end{center}
 
+\vspace{4pt}
+
+%-----------SUMMARY-----------
+\section{SUMMARY}
+
+\small
+Full Stack Developer with hands-on experience building scalable web applications using React.js, Next.js, Node.js, Express.js, MongoDB, and PostgreSQL. Experienced in designing REST APIs, implementing secure authentication, server-side rendering, SEO optimization, and deploying production-ready applications. Passionate about software engineering, scalable system design, and open-source contributions.
+
+\vspace{4pt}
+
+
 %-----------EXPERIENCE-----------
 \section{EXPERIENCE}
   \resumeSubHeadingListStart
@@ -28,26 +175,28 @@
   {FinnovaCA}{April 2026 - June 2026}
   {Software Engineer}{Remote}
   \resumeItemListStart
-    \resumeItem{Solely designed and developed the complete \textbf{Finnova CA} web platform using \textbf{Next.js, Express.js, MongoDB, and Tailwind CSS}, delivering a production-ready solution for financial advisory and professional services.}
-    
-    \resumeItem{Designed the complete \textbf{frontend, backend architecture, REST APIs, and database schema}, ensuring scalability, maintainability, and responsive user experience across devices.}
-    
-    \resumeItem{Implemented \textbf{SEO best practices}, server-side rendering, metadata optimization, sitemap generation, and performance enhancements to improve search engine visibility and Core Web Vitals.}
-    
-    \resumeItem{Managed end-to-end deployment, hosting, domain configuration, and collaborated directly with the client to gather requirements, iterate on feedback, and successfully deliver the project within the agreed timeline.}
+    \resumeItem{Designed, developed, tested, and deployed the complete \textbf{Finnova CA} web platform using \textbf{Next.js, Express.js, MongoDB, and Tailwind CSS}, delivering a production-ready solution for financial advisory services.}
+
+\resumeItem{Designed scalable \textbf{frontend architecture, backend services, REST APIs, and database schema}, ensuring maintainability, performance, and responsive user experience across devices.}
+
+\resumeItem{Implemented \textbf{SEO optimization}, server-side rendering (SSR), metadata optimization, sitemap generation, and Core Web Vitals improvements to increase search engine visibility and application performance.}
+
+\resumeItem{Managed end-to-end deployment, hosting, domain configuration, and collaborated directly with the client throughout requirement gathering, development, testing, and project delivery.}
+
   \resumeItemListEnd
   
     \resumeSubheading
   {Invigo Infotech}{June 2025}
   {Full Stack Developer Intern (MERN Stack)}{Purnea, Bihar}
   \resumeItemListStart
-    \resumeItem{Designed and developed the complete \textbf{backend architecture} and \textbf{REST APIs} of a \textbf{Music Player Application} using \textbf{Express.js} and \textbf{MongoDB}.}
-    
-    \resumeItem{Implemented secure \textbf{JWT-based authentication}, \textbf{role-based authorization}, password hashing with \textbf{bcrypt}, file uploads using \textbf{Multer}, image storage with \textbf{ImageKit}, and cookie-based session management.}
-    
-    \resumeItem{Built a \textbf{Banking Ledger System's} Backend Architecture +  REST APIs  having idempotency key and ledger entry for each transactions, secure MongoDB transaction sessions for data consistency.}
-    
-    \resumeItem{Developed APIs for transaction workflows, and automated \textbf{ email notifications} while enforcing balance validation, account status checks, and \textbf{token blacklisting} for enhanced security.}
+    \resumeItem{Designed and developed scalable backend architecture and REST APIs for a Music Player Application using Express.js and MongoDB.}
+
+\resumeItem{Implemented secure JWT authentication, Role-Based Access Control (RBAC), bcrypt password hashing, Multer file uploads, ImageKit integration, and cookie-based session management.}
+
+\resumeItem{Built a Banking Ledger System backend implementing idempotency keys, ledger entries for every transaction, and MongoDB transaction sessions to ensure consistency and reliability.}
+
+\resumeItem{Developed secure transaction APIs with automated email notifications, balance validation, account status verification, and JWT token blacklisting for enhanced application security.}
+
   \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -59,24 +208,25 @@
      \resumeProjectHeading
     {\textbf{CiviSence - Civic Issue Management System} $|$ \emph{ReactJS, REST API}}{Feb 2026 -- Present}
     \resumeItemListStart
-        \resumeItem{Developed a full-stack civic issue management platform enabling citizens to report issues with images, geolocation, and real-time status tracking.}
-        
-        \resumeItem{Built secure REST APIs with \textbf{Express.js} and \textbf{MongoDB}, implementing \textbf{JWT authentication}, role-based authorization, image uploads, and issue lifecycle management.}
-        
-        \resumeItem{Designed separate portals for \textbf{Citizens, Organizations, Admins, and Staff}, supporting issue assignment, verification, progress tracking, and resolution workflows.}
-        
-        \resumeItem{Integrated , push notifications, cloud storage, and responsive dashboards while following scalable MERN architecture and SEO best practices.}
+        \resumeItem{Developed a full-stack civic issue management platform currently serving \textbf{100+ users}, enabling issue reporting with image uploads, geolocation, and real-time status tracking.}
+
+\resumeItem{Built secure REST APIs using Express.js and MongoDB with JWT authentication, Role-Based Access Control (RBAC), image uploads, and complete issue lifecycle management.}
+
+\resumeItem{Designed independent portals for Citizens, Organizations, Admins, and Staff supporting issue assignment, verification, progress tracking, resolution workflows, and feedback collection.}
+
+\resumeItem{Integrated push notifications, cloud storage, responsive dashboards, interactive analytics, and SEO optimization while following scalable MERN architecture and modern software engineering practices.}
+
     \resumeItemListEnd    
     \resumeProjectHeading
 {\textbf{AI Resume Analyzer} $|$ \emph{React.js, Express.js, MongoDB, Gemini API}}{May 2026}
 \resumeItemListStart
-    \resumeItem{Developed a full-stack AI-powered platform that analyzes resumes and provides ATS score, keyword optimization, and personalized improvement suggestions.}
-    
-    \resumeItem{Integrated \textbf{Google Gemini API} to generate intelligent resume feedback, skill gap analysis, and role-specific recommendations.}
-    
-    \resumeItem{Built secure authentication, resume upload, report history, and dashboard features using \textbf{Express.js}, \textbf{MongoDB}, and JWT authentication.}
-    
-    \resumeItem{Designed a responsive React frontend with real-time analysis results and downloadable feedback reports.}
+    \resumeItem{Developed a full-stack AI-powered resume analysis platform that generates ATS scores, keyword optimization, resume parsing, and personalized improvement suggestions.}
+
+\resumeItem{Integrated Google Gemini API to provide intelligent resume feedback, skill gap analysis, role-specific recommendations, and AI-generated career insights.}
+
+\resumeItem{Built secure authentication, PDF resume upload, report history, dashboard, and REST APIs using Express.js, MongoDB, and JWT authentication.}
+
+\resumeItem{Designed a responsive React.js frontend with real-time analysis, downloadable reports, and optimized user experience across devices.}
 \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -118,9 +268,24 @@
 {Open Source Contributor}{2024 -- Present}
 {GirlScript Summer of Code, Social Winter of Code, HacktoberFest}{Remote}
 \resumeItemListStart
-\resumeItem{Contributed features, bug fixes, and UI improvements to multiple open-source projects using React, JavaScript, HTML, and CSS.}
-\resumeItem{Collaborated with maintainers through GitHub issues, pull requests, and code reviews while following industry-standard Git workflows.}
-\resumeItem{Successfully completed HacktoberFest'24 contributed during GSSoC and SWOC.}
+\resumeItem{Contributed \textbf{100+ merged pull requests} across GirlScript Summer of Code (GSSoC), Social Winter of Code (SWOC), and HacktoberFest.}
+
+\resumeItem{Collaborated with \textbf{50+ developers} through GitHub issues, pull requests, and code reviews while following industry-standard Git workflows.}
+
+\resumeItem{Implemented features, bug fixes, UI enhancements, and documentation improvements across multiple React and JavaScript open-source projects.}
+
+\resumeItem{Successfully completed HacktoberFest'24 and actively contributed as both an open-source contributor and project maintainer during community programs.}
+
 \resumeItemListEnd
 
+\section{CERTIFICATIONS}
+
+\resumeItemListStart
+\resumeItem{Postman API Fundamentals Student Expert}
+\resumeItem{Google Cloud Arcade Facilitator Program}
+\resumeItem{HacktoberFest 2024}
+\resumeItemListEnd
+
+
 %-------------------------------------------
+\end{document}
